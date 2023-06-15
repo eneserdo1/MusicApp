@@ -1,0 +1,99 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace(BuildConfigVersions.applicationID)
+    compileSdk(BuildConfigVersions.compileSdk)
+
+    defaultConfig {
+        applicationId(BuildConfigVersions.applicationID)
+        minSdk(BuildConfigVersions.minSdk)
+        targetSdk(BuildConfigVersions.targetSdk)
+        versionCode = BuildConfigVersions.versionCode
+        versionName = BuildConfigVersions.versionName
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation(Libs.kotlin)
+    implementation(Libs.coreKtx)
+    implementation(Libs.appcompat)
+    implementation(Libs.material)
+    implementation(Libs.constraintLayout)
+    testImplementation(Libs.junit)
+    androidTestImplementation(Libs.junitExt)
+    androidTestImplementation(Libs.espresso)
+
+
+    //Retrofit
+    implementation(Libs.retrofit)
+    implementation(Libs.retrofitConverter)
+    implementation(Libs.interceptor)
+
+    //Recyclerview
+    implementation(Libs.recyclerview)
+
+    //coroutines
+    implementation(Libs.coroutinesCore)
+    implementation(Libs.coroutines)
+
+    //Lifecycle
+    implementation(Libs.lifecycleExtension)
+    implementation(Libs.lifecycleViewmodelKtx)
+    implementation(Libs.lifecycleLivedata)
+
+    //hilt
+    implementation(Libs.hilt)
+    kapt(Libs.hiltCompiler)
+    implementation(Libs.activityKtx)
+
+    //Fragment
+    implementation(Libs.fragmentKtx)
+
+    //Room
+    implementation(Libs.roomKtx)
+    implementation(Libs.room)
+    kapt(Libs.roomCompiler)
+    annotationProcessor(Libs.roomAnnotationProcessor)
+
+    //SharedPreferences
+    implementation(Libs.preferencesKtx)
+
+    //Test
+    implementation(Libs.testCore)
+    testImplementation(Libs.hamcrest)
+    testImplementation(Libs.archCore)
+    testImplementation(Libs.roboElectric)
+    testImplementation(Libs.coroutineTest)
+    testImplementation(Libs.truth)
+    testImplementation(Libs.mockito)
+    testImplementation(Libs.mockk)
+    testImplementation(Libs.willowtreeapps)
+}

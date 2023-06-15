@@ -1,0 +1,1 @@
+/Users/eneserdogan/AndroidStudioProjects/MusicApp/buildSrc/build/classes/kotlin/main/BuildConfigVersions.class:/Users/eneserdogan/AndroidStudioProjects/MusicApp/buildSrc/build/classes/kotlin/main/Libs.class:/Users/eneserdogan/AndroidStudioProjects/MusicApp/buildSrc/build/classes/kotlin/main/Versions.class
