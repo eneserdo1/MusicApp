@@ -1,5 +1,8 @@
 package com.app.musicapp.common.models
 
+import android.os.Parcel
+import android.os.Parcelable
+
 data class MusicUiModel(
     val id: Int = 0,
     val artistId: Int ? = null,
@@ -44,4 +47,111 @@ data class MusicUiModel(
     val trackTimeMillis: Int ? = null,
     val trackViewUrl: String ? = null,
     val wrapperType: String ? = null
-)
+) : Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readInt(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readValue(Double::class.java.classLoader) as? Double,
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
+        parcel.readValue(Double::class.java.classLoader) as? Double,
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
+        parcel.readValue(Double::class.java.classLoader) as? Double,
+        parcel.readValue(Double::class.java.classLoader) as? Double,
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readValue(Double::class.java.classLoader) as? Double,
+        parcel.readValue(Double::class.java.classLoader) as? Double,
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
+        parcel.readString()
+    ) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(id)
+        parcel.writeValue(artistId)
+        parcel.writeString(artistName)
+        parcel.writeString(artistViewUrl)
+        parcel.writeString(artworkUrl100)
+        parcel.writeString(artworkUrl30)
+        parcel.writeString(artworkUrl60)
+        parcel.writeValue(collectionArtistId)
+        parcel.writeString(collectionArtistName)
+        parcel.writeString(collectionArtistViewUrl)
+        parcel.writeString(collectionCensoredName)
+        parcel.writeString(collectionExplicitness)
+        parcel.writeValue(collectionHdPrice)
+        parcel.writeValue(collectionId)
+        parcel.writeString(collectionName)
+        parcel.writeValue(collectionPrice)
+        parcel.writeString(collectionViewUrl)
+        parcel.writeString(contentAdvisoryRating)
+        parcel.writeString(country)
+        parcel.writeString(currency)
+        parcel.writeValue(discCount)
+        parcel.writeValue(discNumber)
+        parcel.writeValue(hasITunesExtras)
+        parcel.writeValue(isStreamable)
+        parcel.writeString(kind)
+        parcel.writeString(longDescription)
+        parcel.writeString(previewUrl)
+        parcel.writeString(primaryGenreName)
+        parcel.writeString(releaseDate)
+        parcel.writeString(shortDescription)
+        parcel.writeString(trackCensoredName)
+        parcel.writeValue(trackCount)
+        parcel.writeString(trackExplicitness)
+        parcel.writeValue(trackHdPrice)
+        parcel.writeValue(trackHdRentalPrice)
+        parcel.writeValue(trackId)
+        parcel.writeString(trackName)
+        parcel.writeValue(trackNumber)
+        parcel.writeValue(trackPrice)
+        parcel.writeValue(trackRentalPrice)
+        parcel.writeValue(trackTimeMillis)
+        parcel.writeString(trackViewUrl)
+        parcel.writeString(wrapperType)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<MusicUiModel> {
+        override fun createFromParcel(parcel: Parcel): MusicUiModel {
+            return MusicUiModel(parcel)
+        }
+
+        override fun newArray(size: Int): Array<MusicUiModel?> {
+            return arrayOfNulls(size)
+        }
+    }
+}

@@ -3,7 +3,10 @@ package com.app.musicapp.presentation.ui.musicHorizontalList.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.app.musicapp.R
+import com.app.musicapp.common.constants.IntentKeys.Companion.SELECTED_MUSIC_FROM_LIST
 import com.app.musicapp.common.models.MusicUiModel
 import com.app.musicapp.common.utils.ProgressDialogUtil
 import com.app.musicapp.databinding.FragmentMusicHorizontalListBinding
@@ -43,6 +46,10 @@ class MusicHorizontalListFragment :
     private fun initAdapter(it: List<MusicUiModel>?) {
         musicListAdapter = MusicHorizontalListAdapter(object : MusicHorizontalListListener {
             override fun goDetail(item: MusicUiModel) {
+                val bundle = Bundle().apply {
+                    putParcelable(SELECTED_MUSIC_FROM_LIST,item)
+                }
+                findNavController().navigate(R.id.musicDetailFragment,bundle)
             }
 
             override fun delete(item: MusicUiModel) {
