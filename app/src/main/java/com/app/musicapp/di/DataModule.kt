@@ -2,7 +2,7 @@ package com.app.musicapp.di
 
 import android.content.Context
 import androidx.room.Room
-import com.app.musicapp.common.models.NetworkHelper
+import com.app.musicapp.common.utils.NetworkHelper
 import com.app.musicapp.data.localDataSource.MusicDao
 import com.app.musicapp.data.localDataSource.MusicDatabase
 import com.app.musicapp.data.localDataSource.SharedPreferencesHelper

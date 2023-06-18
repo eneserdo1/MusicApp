@@ -1,4 +1,4 @@
-package com.app.musicapp.common.models
+package com.app.musicapp.common.utils
 
 
 import android.content.Context
