@@ -2,7 +2,7 @@ package com.app.musicapp.di
 
 import android.content.Context
 import com.app.musicapp.common.constants.NetworkConstants
-import com.app.musicapp.common.models.NetworkHelper
+import com.app.musicapp.common.utils.NetworkHelper
 import com.app.musicapp.data.network.ApiService
 import dagger.Module
 import dagger.Provides

@@ -42,11 +42,13 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             repository.getMusicList().collect {
                 when (it) {
-                    is Result.Success -> {}
+                    is Result.Success -> {
+                    }
                     is Result.Loading -> {
                         loading.value = true
                     }
                     is Result.Error -> {
+                        loading.value = false
                         error.value = it.throwable
                     }
                 }

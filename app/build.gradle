@@ -69,6 +69,10 @@ dependencies {
     implementation(Libs.lifecycleViewmodelKtx)
     implementation(Libs.lifecycleLivedata)
 
+    //navigation
+    implementation(Libs.navigationFragmentKtx)
+    implementation(Libs.navigationUiKtx)
+
     //hilt
     implementation(Libs.hilt)
     kapt(Libs.hiltCompiler)

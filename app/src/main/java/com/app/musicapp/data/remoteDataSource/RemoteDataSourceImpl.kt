@@ -1,6 +1,6 @@
 package com.app.musicapp.data.remoteDataSource
 
-import com.app.musicapp.common.models.NetworkHelper
+import com.app.musicapp.common.utils.NetworkHelper
 import com.app.musicapp.common.models.Result
 import com.app.musicapp.data.base.BaseRemoteDataSource
 import com.app.musicapp.data.models.MusicListResponseItem

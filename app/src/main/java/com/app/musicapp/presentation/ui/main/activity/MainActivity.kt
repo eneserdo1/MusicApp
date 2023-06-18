@@ -2,6 +2,9 @@ package com.app.musicapp.presentation.ui.main.activity
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import com.app.musicapp.R
 import com.app.musicapp.databinding.ActivityMainBinding
 import com.app.musicapp.presentation.base.BaseActivity
 import com.app.musicapp.presentation.ui.main.viewModel.MainViewModel
@@ -13,8 +16,42 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     private val viewModel: MainViewModel by viewModels()
 
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        navController = navHostFragment.navController
+
+
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.tab1 -> {
+                    navController.navigate(R.id.musicListFragment)
+                    true
+                }
+
+                R.id.tab2 -> {
+                    navController.navigate(R.id.musicCountFragment)
+                    true
+                }
+
+                R.id.tab3 -> {
+                    navController.navigate(R.id.musicGridListFragment)
+                    true
+                }
+
+                R.id.tab4 -> {
+                    navController.navigate(R.id.musicHorizontalListFragment)
+                    true
+                }
+                else -> {
+                    false
+                }
+            }
+        }
 
     }
 }

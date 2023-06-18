@@ -3,4 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="adet_sonuc_bulundu">adet sonuç bulundu</string>
+    <string name="tab1_label">All Musics</string>
+    <string name="tab2_label">Count</string>
+    <string name="tab3_label">Grid</string>
+    <string name="tab4_label">Horizontal</string>
+    <string name="loading">Loading</string>
 </resources>

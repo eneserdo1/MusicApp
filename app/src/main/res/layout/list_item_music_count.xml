@@ -8,8 +8,9 @@
 
     <TextView
         android:id="@+id/artistNameTv"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
         android:gravity="start"
         android:textAlignment="textStart"
         android:textColor="@color/black"
@@ -18,15 +19,16 @@
         app:layout_constraintEnd_toStartOf="@+id/goDetailButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Enes Erdoğan"
+        tools:text="Jack Johnson"
 
         />
 
     <TextView
         android:id="@+id/trackNameTv"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
+        android:layout_marginEnd="4dp"
         android:gravity="start"
         android:textAlignment="textStart"
         android:textColor="@color/black"
@@ -34,13 +36,15 @@
         app:layout_constraintEnd_toStartOf="@+id/goDetailButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/artistNameTv"
-        tools:text="Enes Erdoğan"
+        tools:text="Jack Johnson"
 
         />
 
     <include
         android:id="@+id/goDetailButton"
         layout="@layout/go_detail_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

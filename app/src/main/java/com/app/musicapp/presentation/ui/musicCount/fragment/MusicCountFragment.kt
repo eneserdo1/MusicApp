@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.app.musicapp.R
 import com.app.musicapp.common.models.MusicUiModel
+import com.app.musicapp.common.utils.ProgressDialogUtil
 import com.app.musicapp.databinding.FragmentMusicCountBinding
 import com.app.musicapp.presentation.base.BaseFragment
 import com.app.musicapp.presentation.ui.main.viewModel.MainViewModel
@@ -27,6 +28,14 @@ class MusicCountFragment : BaseFragment<FragmentMusicCountBinding>(FragmentMusic
         viewModel.allMusicList().observe(viewLifecycleOwner) {
             binding.listCountTv.text = "${it.size} ${getString(R.string.adet_sonuc_bulundu)}"
             initAdapter(it)
+        }
+
+        viewModel.loading.observe(viewLifecycleOwner) {
+            if (it) {
+                ProgressDialogUtil.showProgress(requireContext())
+            } else {
+                ProgressDialogUtil.hideProgress()
+            }
         }
     }
 
