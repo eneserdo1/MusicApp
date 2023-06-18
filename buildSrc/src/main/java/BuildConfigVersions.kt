@@ -1,5 +1,5 @@
 object BuildConfigVersions {
-    const val applicationID ="com.app.movieapp"
+    const val applicationID ="com.app.musicapp"
     const val compileSdk = 33
     const val minSdk = 24
     const val targetSdk = 33
