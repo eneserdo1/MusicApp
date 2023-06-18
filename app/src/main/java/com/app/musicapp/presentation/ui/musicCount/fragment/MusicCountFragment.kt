@@ -29,14 +29,6 @@ class MusicCountFragment : BaseFragment<FragmentMusicCountBinding>(FragmentMusic
             binding.listCountTv.text = "${it.size} ${getString(R.string.adet_sonuc_bulundu)}"
             initAdapter(it)
         }
-
-        viewModel.loading.observe(viewLifecycleOwner) {
-            if (it) {
-                ProgressDialogUtil.showProgress(requireContext())
-            } else {
-                ProgressDialogUtil.hideProgress()
-            }
-        }
     }
 
     private fun initAdapter(it: List<MusicUiModel>?) {

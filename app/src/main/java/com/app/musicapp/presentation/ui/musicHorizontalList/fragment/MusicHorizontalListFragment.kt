@@ -33,14 +33,6 @@ class MusicHorizontalListFragment :
         viewModel.allMusicList().observe(viewLifecycleOwner) {
             initAdapter(it)
         }
-
-        viewModel.loading.observe(viewLifecycleOwner) {
-            if (it) {
-                ProgressDialogUtil.showProgress(requireContext())
-            } else {
-                ProgressDialogUtil.hideProgress()
-            }
-        }
     }
 
     private fun initAdapter(it: List<MusicUiModel>?) {

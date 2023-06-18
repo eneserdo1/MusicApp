@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.app.musicapp.common.models.MusicUiModel
-import com.app.musicapp.common.models.Result
 import com.app.musicapp.common.utils.getCurrentDate
 import com.app.musicapp.data.localDataSource.SharedPreferencesHelper
 import com.app.musicapp.data.repository.Repository
@@ -41,17 +40,7 @@ class MainViewModel @Inject constructor(
     private fun fetchMusicList() {
         viewModelScope.launch {
             repository.getMusicList().collect {
-                when (it) {
-                    is Result.Success -> {
-                    }
-                    is Result.Loading -> {
-                        loading.value = true
-                    }
-                    is Result.Error -> {
-                        loading.value = false
-                        error.value = it.throwable
-                    }
-                }
+                parseResponse(it)
             }
         }
     }

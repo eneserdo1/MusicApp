@@ -2,11 +2,8 @@ package com.app.musicapp.common.utils
 
 import android.app.Dialog
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.Window
 import com.app.musicapp.R
 
 object ProgressDialogUtil {
@@ -18,11 +15,10 @@ object ProgressDialogUtil {
         }
 
         progressDialog = Dialog(context)
-        progressDialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        progressDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         val view = LayoutInflater.from(context).inflate(R.layout.layout_loading, null)
         progressDialog?.setContentView(view)
+        progressDialog?.setCancelable(false)
 
         val window = progressDialog?.window
         val layoutParams = window?.attributes
