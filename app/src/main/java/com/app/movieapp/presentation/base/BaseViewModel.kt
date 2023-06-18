@@ -9,6 +9,6 @@ abstract class BaseViewModel(private val appication: Application) : AndroidViewM
     var loading = MutableLiveData<Boolean>()
         protected set
 
-    var error = MutableLiveData<Error>()
+    var error = MutableLiveData<Throwable>()
         protected set
 }
