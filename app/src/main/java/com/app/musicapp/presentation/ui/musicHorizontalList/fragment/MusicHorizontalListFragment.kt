@@ -53,6 +53,7 @@ class MusicHorizontalListFragment :
             }
 
             override fun delete(item: MusicUiModel) {
+                viewModel.deleteMusic(item)
             }
 
         })

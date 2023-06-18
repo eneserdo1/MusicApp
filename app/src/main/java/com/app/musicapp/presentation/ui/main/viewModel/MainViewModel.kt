@@ -60,4 +60,10 @@ class MainViewModel @Inject constructor(
         return musicUseCase.allMusicList()
     }
 
+    fun deleteMusic(music: MusicUiModel) {
+        viewModelScope.launch {
+            music.trackId?.let { repository.deleteMusic(it) }
+        }
+    }
+
 }

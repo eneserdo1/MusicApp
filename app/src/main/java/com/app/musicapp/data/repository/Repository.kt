@@ -46,4 +46,6 @@ class Repository @Inject constructor(
 
     fun allMusics(): LiveData<List<MusicEntity>> = musicDao.getAllMusics()
 
+    suspend fun deleteMusic(trackId : Int) = musicDao.deleteWithTrackId(trackId)
+
 }
