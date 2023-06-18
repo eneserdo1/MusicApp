@@ -86,6 +86,9 @@ dependencies {
     //SharedPreferences
     implementation(Libs.preferencesKtx)
 
+    //coil
+    implementation(Libs.coil)
+
     //Test
     implementation(Libs.testCore)
     testImplementation(Libs.hamcrest)

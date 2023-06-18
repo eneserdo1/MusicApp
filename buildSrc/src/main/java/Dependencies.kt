@@ -1,4 +1,5 @@
 import Versions.archCoreVersion
+import Versions.coilVersion
 import Versions.coroutineTestVersion
 import Versions.hamcrestVersion
 import Versions.preferencesKtxVersion
@@ -36,6 +37,7 @@ object Versions {
     const val willowtreeappsVersion = "0.23"
     const val roomVersion = "2.4.0-alpha03"
     const val preferencesKtxVersion = "1.2.0"
+    const val coilVersion = "2.4.0"
 }
 
 object Libs {
@@ -92,6 +94,10 @@ object Libs {
 
     //Shared preferences
     const val preferencesKtx = "androidx.preference:preference-ktx:${preferencesKtxVersion}"
+
+    //coil
+    const val coil = "io.coil-kt:coil:$coilVersion"
+
 
     // TestImplementations
     const val testCore = "androidx.test:core:${testCoreVersion}"
