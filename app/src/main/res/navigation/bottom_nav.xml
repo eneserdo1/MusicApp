@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/musicListFragment">
+
+    <fragment
+        android:id="@+id/musicListFragment"
+        android:name="com.app.musicapp.presentation.ui.musicList.fragment.MusicListFragment"
+        android:label="fragment_music_list"
+        tools:layout="@layout/fragment_music_list" />
+    <fragment
+        android:id="@+id/musicCountFragment"
+        android:name="com.app.musicapp.presentation.ui.musicCount.fragment.MusicCountFragment"
+        android:label="fragment_music_count"
+        tools:layout="@layout/fragment_music_count" />
+    <fragment
+        android:id="@+id/musicGridListFragment"
+        android:name="com.app.musicapp.presentation.ui.musicGridList.fragment.MusicGridListFragment"
+        android:label="fragment_music_grid_list"
+        tools:layout="@layout/fragment_music_grid_list" />
+    <fragment
+        android:id="@+id/musicHorizontalListFragment"
+        android:name="com.app.musicapp.presentation.ui.musicHorizontalList.fragment.MusicHorizontalListFragment"
+        android:label="fragment_music_horizontal_list"
+        tools:layout="@layout/fragment_music_horizontal_list" />
+    <fragment
+        android:id="@+id/musicDetailFragment"
+        android:name="com.app.musicapp.presentation.ui.musicDetail.fragment.MusicDetailFragment"
+        android:label="fragment_music_detail"
+        tools:layout="@layout/fragment_music_detail" />
+</navigation>
