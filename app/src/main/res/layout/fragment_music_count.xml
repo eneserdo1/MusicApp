@@ -6,13 +6,17 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="8dp"
     tools:context=".presentation.ui.musicCount.fragment.MusicCountFragment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_layout" />
 
     <TextView
         android:id="@+id/listCountTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:textAlignment="center"
         android:textSize="16sp" />
 
@@ -20,7 +24,7 @@
         android:id="@+id/musicListRv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_margin="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </LinearLayout>
