@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.musicapp.R
 import com.app.musicapp.common.constants.IntentKeys.Companion.SELECTED_MUSIC_FROM_LIST
 import com.app.musicapp.common.models.MusicUiModel
+import com.app.musicapp.common.utils.Alert.Companion.showSuccessPopup
+import com.app.musicapp.common.utils.Alert.Companion.successDialog
 import com.app.musicapp.common.utils.ProgressDialogUtil
 import com.app.musicapp.databinding.FragmentMusicHorizontalListBinding
 import com.app.musicapp.presentation.base.BaseFragment
@@ -46,6 +48,9 @@ class MusicHorizontalListFragment :
 
             override fun delete(item: MusicUiModel) {
                 viewModel.deleteMusic(item)
+                requireContext().showSuccessPopup {
+                    successDialog.dismiss()
+                }
             }
 
         })

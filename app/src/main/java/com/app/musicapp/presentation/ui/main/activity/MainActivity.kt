@@ -5,6 +5,8 @@ import androidx.activity.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.app.musicapp.R
+import com.app.musicapp.common.utils.Alert
+import com.app.musicapp.common.utils.Alert.Companion.showErrorPopup
 import com.app.musicapp.common.utils.ProgressDialogUtil
 import com.app.musicapp.databinding.ActivityMainBinding
 import com.app.musicapp.presentation.base.BaseActivity
@@ -23,8 +25,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         super.onCreate(savedInstanceState)
 
         initObservers()
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
 
 
@@ -62,8 +63,22 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             if (it) {
                 ProgressDialogUtil.showProgress(this)
             } else {
-                 ProgressDialogUtil.hideProgress()
+                ProgressDialogUtil.hideProgress()
             }
         }
+
+        viewModel.error.observe(this) {
+            showAlert()
+        }
+    }
+
+    private fun showAlert() {
+        this.showErrorPopup(
+            positiveListener = {
+                viewModel.refreshData()
+            },
+            negativeListener = {
+                Alert.errorDialog.dismiss()
+            })
     }
 }

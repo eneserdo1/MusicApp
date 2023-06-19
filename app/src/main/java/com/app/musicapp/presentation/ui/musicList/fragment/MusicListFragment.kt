@@ -10,6 +10,9 @@ import com.app.musicapp.R
 import com.app.musicapp.common.constants.IntentKeys
 import com.app.musicapp.common.listeners.MusicListSelectedListener
 import com.app.musicapp.common.models.MusicUiModel
+import com.app.musicapp.common.utils.Alert.Companion.pagingErrorDialog
+import com.app.musicapp.common.utils.Alert.Companion.showErrorPopup
+import com.app.musicapp.common.utils.Alert.Companion.showPagingErrorPopup
 import com.app.musicapp.common.utils.ProgressDialogUtil
 import com.app.musicapp.databinding.FragmentMusicListBinding
 import com.app.musicapp.presentation.base.BaseFragment
@@ -31,7 +34,6 @@ class MusicListFragment :
         initAdapter()
         initAdapterLoader()
         initObservers()
-
     }
 
     private fun initObservers() {

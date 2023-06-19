@@ -29,7 +29,7 @@ class MusicCountFragment :
 
     private fun initObservers() {
         viewModel.allMusicList().observe(viewLifecycleOwner) {
-            binding.listCountTv.text = "${it.size} ${getString(R.string.adet_sonuc_bulundu)}"
+            binding.listCountTv.text = "${it.size} ${getString(R.string.number_of_results_found)}"
             initAdapter(it)
         }
     }
@@ -40,6 +40,7 @@ class MusicCountFragment :
                 val bundle = Bundle().apply {
                     putParcelable(IntentKeys.SELECTED_MUSIC_FROM_LIST, item)
                 }
+
                 findNavController().navigate(R.id.musicDetailFragment, bundle)
             }
 
