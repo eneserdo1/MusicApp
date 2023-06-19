@@ -40,7 +40,7 @@ class MusicGridListFragment :
                 val bundle = Bundle().apply {
                     putParcelable(IntentKeys.SELECTED_MUSIC_FROM_LIST,item)
                 }
-                findNavController().navigate(R.id.musicDetailFragment,bundle)
+                findNavController().navigate(R.id.action_musicGridListFragment_to_musicDetailFragment,bundle)
             }
         })
         musicListAdapter.submitList(it)

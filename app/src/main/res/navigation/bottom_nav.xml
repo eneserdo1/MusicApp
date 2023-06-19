@@ -9,22 +9,54 @@
         android:id="@+id/musicListFragment"
         android:name="com.app.musicapp.presentation.ui.musicList.fragment.MusicListFragment"
         android:label="fragment_music_list"
-        tools:layout="@layout/fragment_music_list" />
+        tools:layout="@layout/fragment_music_list" >
+        <action
+            android:id="@+id/action_musicListFragment_to_musicDetailFragment"
+            app:destination="@id/musicDetailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/musicCountFragment"
         android:name="com.app.musicapp.presentation.ui.musicCount.fragment.MusicCountFragment"
         android:label="fragment_music_count"
-        tools:layout="@layout/fragment_music_count" />
+        tools:layout="@layout/fragment_music_count" >
+        <action
+            android:id="@+id/action_musicCountFragment_to_musicDetailFragment"
+            app:destination="@id/musicDetailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/musicGridListFragment"
         android:name="com.app.musicapp.presentation.ui.musicGridList.fragment.MusicGridListFragment"
         android:label="fragment_music_grid_list"
-        tools:layout="@layout/fragment_music_grid_list" />
+        tools:layout="@layout/fragment_music_grid_list" >
+        <action
+            android:id="@+id/action_musicGridListFragment_to_musicDetailFragment"
+            app:destination="@id/musicDetailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/musicHorizontalListFragment"
         android:name="com.app.musicapp.presentation.ui.musicHorizontalList.fragment.MusicHorizontalListFragment"
         android:label="fragment_music_horizontal_list"
-        tools:layout="@layout/fragment_music_horizontal_list" />
+        tools:layout="@layout/fragment_music_horizontal_list" >
+        <action
+            android:id="@+id/action_musicHorizontalListFragment_to_musicDetailFragment"
+            app:destination="@id/musicDetailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/musicDetailFragment"
         android:name="com.app.musicapp.presentation.ui.musicDetail.fragment.MusicDetailFragment"

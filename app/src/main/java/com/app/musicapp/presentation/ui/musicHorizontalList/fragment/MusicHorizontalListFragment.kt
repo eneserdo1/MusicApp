@@ -43,7 +43,7 @@ class MusicHorizontalListFragment :
                 val bundle = Bundle().apply {
                     putParcelable(SELECTED_MUSIC_FROM_LIST,item)
                 }
-                findNavController().navigate(R.id.musicDetailFragment,bundle)
+                findNavController().navigate(R.id.action_musicHorizontalListFragment_to_musicDetailFragment,bundle)
             }
 
             override fun delete(item: MusicUiModel) {
