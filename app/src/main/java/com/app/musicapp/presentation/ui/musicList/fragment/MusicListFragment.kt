@@ -4,7 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
+import com.app.musicapp.R
+import com.app.musicapp.common.constants.IntentKeys
+import com.app.musicapp.common.listeners.MusicListSelectedListener
+import com.app.musicapp.common.models.MusicUiModel
 import com.app.musicapp.common.utils.ProgressDialogUtil
 import com.app.musicapp.databinding.FragmentMusicListBinding
 import com.app.musicapp.presentation.base.BaseFragment
@@ -59,7 +64,14 @@ class MusicListFragment :
     }
 
     private fun initAdapter() {
-        musicAdapter = MusicListPagingAdapter()
+        musicAdapter = MusicListPagingAdapter(object : MusicListSelectedListener {
+            override fun goDetail(item: MusicUiModel) {
+                val bundle = Bundle().apply {
+                    putParcelable(IntentKeys.SELECTED_MUSIC_FROM_LIST,item)
+                }
+                findNavController().navigate(R.id.musicDetailFragment,bundle)
+            }
+        })
         binding.musicPagingRV.adapter = musicAdapter
     }
 

@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.app.musicapp.common.listeners.MusicListSelectedListener
 import com.app.musicapp.common.models.MusicUiModel
 import com.app.musicapp.databinding.ListItemMusicCountBinding
 
-class MusicListAdapter : ListAdapter<MusicUiModel, MusicViewHolder>(MusicDiffCallback) {
+class MusicListAdapter (private val musicListSelectedListener: MusicListSelectedListener) : ListAdapter<MusicUiModel, MusicViewHolder>(MusicDiffCallback) {
 
     private lateinit var binding: ListItemMusicCountBinding
 
@@ -24,7 +25,7 @@ class MusicListAdapter : ListAdapter<MusicUiModel, MusicViewHolder>(MusicDiffCal
 
 
     override fun onBindViewHolder(holder: MusicViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), musicListSelectedListener)
     }
 
 

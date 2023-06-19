@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
+import com.app.musicapp.common.listeners.MusicListSelectedListener
 import com.app.musicapp.common.models.MusicUiModel
 import com.app.musicapp.databinding.ListItemMusicWithImageBinding
 
-class MusicListPagingAdapter :
+class MusicListPagingAdapter(private val musicListSelectedListener: MusicListSelectedListener) :
     PagingDataAdapter<MusicUiModel, MusicListPagingViewHolder>(DiffUtilCallback) {
 
     private lateinit var binding: ListItemMusicWithImageBinding
@@ -23,7 +24,7 @@ class MusicListPagingAdapter :
     }
 
     override fun onBindViewHolder(holder: MusicListPagingViewHolder, position: Int) {
-        getItem(position)?.let { holder.bind(it) }
+        getItem(position)?.let { holder.bind(it, musicListSelectedListener) }
     }
 
 
