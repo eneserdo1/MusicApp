@@ -25,9 +25,9 @@ class Repository @Inject constructor(
     }
 
     private suspend fun insertAll(movies: Flow<Result<MusicListResponseItem>>) {
-        sharedPreferencesHelper.lastUpdateDate = getCurrentDate()
         movies.collect {
             if (it is Result.Success) {
+                sharedPreferencesHelper.lastUpdateDate = getCurrentDate()
                 musicDao.deleteAllMusic()
                 val entityList = mapResponseToEntity(it.data)
                 musicDao.insertMusics(entityList)

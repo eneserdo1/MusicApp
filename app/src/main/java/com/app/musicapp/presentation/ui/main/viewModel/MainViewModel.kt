@@ -28,24 +28,17 @@ class MainViewModel @Inject constructor(
     application: Application
 ) : BaseViewModel(application) {
 
-
-
     init {
-        fetchMusicListPage()
-        checkDataUpdatedState()
+        fetchMusicList()
     }
 
-    private fun checkDataUpdatedState() {
+    fun fetchMusicList() {
         val lastUpdatedDate = sharedPreferencesHelper.lastUpdateDate
         val currentDate = getCurrentDate()
 
         if (lastUpdatedDate == currentDate) {
             return
         }
-        fetchMusicList()
-    }
-
-    private fun fetchMusicList() {
         viewModelScope.launch {
             repository.getMusicList().collect {
                 parseResponse(it)
@@ -59,7 +52,9 @@ class MainViewModel @Inject constructor(
 
     fun deleteMusic(music: MusicUiModel) {
         viewModelScope.launch {
-            music.trackId?.let { repository.deleteMusic(it) }
+            music.trackId?.let {
+                repository.deleteMusic(it)
+            }
         }
     }
 
@@ -80,5 +75,9 @@ class MainViewModel @Inject constructor(
         return flow
     }
 
+    fun refreshData() {
+        fetchMusicListPage()
+        fetchMusicList()
+    }
 
 }
