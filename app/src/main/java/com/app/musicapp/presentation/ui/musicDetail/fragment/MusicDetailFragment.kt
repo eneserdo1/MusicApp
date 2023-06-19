@@ -43,6 +43,7 @@ class MusicDetailFragment :
                 collectionNameTv.text = data.collectionName.toString()
                 priceNameTv.text = "₺ ${data.trackPrice.toString()}"
                 releaseDateTv.text = data.releaseDate.toString()
+                descriptionTv.text = data.longDescription.toString()
             }
         }
     }

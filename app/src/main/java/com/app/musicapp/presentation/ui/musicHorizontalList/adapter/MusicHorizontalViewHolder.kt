@@ -14,7 +14,7 @@ class MusicHorizontalViewHolder(private val binding: ListItemMusicHorizontalBind
             artistNameTv.text = data.artistName.toString()
             trackNameTv.text = data.trackName.toString()
             releaseDateTv.text = data.releaseDate.toString()
-            trackPriceTv.text = data.trackPrice.toString()
+            trackPriceTv.text = "₺ ${data.trackPrice.toString()}"
             artistIV.load(data.artworkUrl100)
 
             root.setOnClickListener {

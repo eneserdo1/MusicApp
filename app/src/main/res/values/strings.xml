@@ -15,4 +15,10 @@
     <string name="alert_message_positive_button_title">Try Again</string>
     <string name="alert_message_description">Technical Error</string>
     <string name="alert_message_title">Warning</string>
+    <string name="description">Description</string>
+    <string name="release_date">Release Date</string>
+    <string name="price">Price</string>
+    <string name="collection">Collection</string>
+    <string name="track_name">Track Name</string>
+    <string name="artist_name">Artist Name</string>
 </resources>
