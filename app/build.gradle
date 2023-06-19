@@ -93,6 +93,9 @@ dependencies {
     //coil
     implementation(Libs.coil)
 
+    //paging
+    implementation(Libs.paging)
+
     //Test
     implementation(Libs.testCore)
     testImplementation(Libs.hamcrest)

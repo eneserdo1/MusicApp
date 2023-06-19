@@ -13,5 +13,5 @@ interface ApiService {
 
 
     @GET("search")
-    suspend fun getMusicList(@QueryMap param: Map<String, String>): Response<MusicListResponseItem>
+    suspend fun getMusicList(@Query("term") term : String = "jack+johnson",@QueryMap param: Map<String, String>): Response<MusicListResponseItem>
 }

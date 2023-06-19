@@ -2,6 +2,7 @@ import Versions.archCoreVersion
 import Versions.coilVersion
 import Versions.coroutineTestVersion
 import Versions.hamcrestVersion
+import Versions.paging_version
 import Versions.preferencesKtxVersion
 import Versions.roboElectricVersion
 import Versions.roomVersion
@@ -38,6 +39,7 @@ object Versions {
     const val roomVersion = "2.4.0-alpha03"
     const val preferencesKtxVersion = "1.2.0"
     const val coilVersion = "2.4.0"
+    const val paging_version = "3.0.0-alpha04"
 }
 
 object Libs {
@@ -98,6 +100,8 @@ object Libs {
     //coil
     const val coil = "io.coil-kt:coil:$coilVersion"
 
+    //paging
+    const val paging = "androidx.paging:paging-runtime:$paging_version"
 
     // TestImplementations
     const val testCore = "androidx.test:core:${testCoreVersion}"

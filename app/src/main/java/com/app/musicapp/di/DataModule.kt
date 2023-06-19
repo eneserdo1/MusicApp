@@ -7,6 +7,7 @@ import com.app.musicapp.data.localDataSource.MusicDao
 import com.app.musicapp.data.localDataSource.MusicDatabase
 import com.app.musicapp.data.localDataSource.SharedPreferencesHelper
 import com.app.musicapp.data.network.ApiService
+import com.app.musicapp.data.remoteDataSource.PagingDataSource
 import com.app.musicapp.data.remoteDataSource.RemoteDataSource
 import com.app.musicapp.data.remoteDataSource.RemoteDataSourceImpl
 import com.app.musicapp.data.repository.Repository
@@ -75,6 +76,12 @@ abstract class DataModule {
         @Provides
         fun provideUseCase(repository: Repository): MusicListUseCase {
             return MusicListUseCase(repository)
+        }
+
+        @Singleton
+        @Provides
+        fun providePagingDataSource(apiService: ApiService): PagingDataSource {
+            return PagingDataSource(apiService)
         }
 
     }

@@ -18,14 +18,6 @@ class Repository @Inject constructor(
     private val sharedPreferencesHelper: SharedPreferencesHelper
 ) {
 
-
-    suspend fun getMusicList(
-        pageNumber: String,
-        pageSize: String
-    ): Flow<Result<MusicListResponseItem>> {
-        return remoteDataSource.getMusicList(pageNumber, pageSize)
-    }
-
     suspend fun getMusicList(): Flow<Result<MusicListResponseItem>> {
         val response = remoteDataSource.getMusicList()
         insertAll(response)
@@ -46,6 +38,6 @@ class Repository @Inject constructor(
 
     fun allMusics(): LiveData<List<MusicEntity>> = musicDao.getAllMusics()
 
-    suspend fun deleteMusic(trackId : Int) = musicDao.deleteWithTrackId(trackId)
+    suspend fun deleteMusic(trackId: Int) = musicDao.deleteWithTrackId(trackId)
 
 }
