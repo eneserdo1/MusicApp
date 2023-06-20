@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import com.app.musicapp.common.listeners.MusicListSelectedListener
 import com.app.musicapp.common.models.MusicUiModel
 import com.app.musicapp.databinding.ListItemMusicWithImageBinding
+import com.app.musicapp.presentation.ui.musicList.adapter.viewholder.MusicListPagingViewHolder
 
 class MusicListPagingAdapter(private val musicListSelectedListener: MusicListSelectedListener) :
     PagingDataAdapter<MusicUiModel, MusicListPagingViewHolder>(DiffUtilCallback) {

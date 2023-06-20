@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.app.musicapp.common.models.MusicUiModel
 import com.app.musicapp.databinding.ListItemMusicHorizontalBinding
+import com.app.musicapp.presentation.ui.musicHorizontalList.adapter.viewholder.MusicHorizontalViewHolder
 import com.app.musicapp.presentation.ui.musicHorizontalList.callback.MusicHorizontalListListener
 
 class MusicHorizontalListAdapter(private val musicHorizontalListListener: MusicHorizontalListListener) : ListAdapter<MusicUiModel, MusicHorizontalViewHolder>(MusicDiffCallback) {

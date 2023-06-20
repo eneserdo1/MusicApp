@@ -6,11 +6,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.app.musicapp.common.listeners.MusicListSelectedListener
 import com.app.musicapp.common.models.MusicUiModel
-import com.app.musicapp.databinding.ListItemMusicCountBinding
+import com.app.musicapp.databinding.ListItemMusicBinding
+import com.app.musicapp.presentation.ui.musicCount.adapter.viewholder.MusicViewHolder
 
-class MusicListAdapter (private val musicListSelectedListener: MusicListSelectedListener) : ListAdapter<MusicUiModel, MusicViewHolder>(MusicDiffCallback) {
+class MusicListAdapter(private val musicListSelectedListener: MusicListSelectedListener) :
+    ListAdapter<MusicUiModel, MusicViewHolder>(MusicDiffCallback) {
 
-    private lateinit var binding: ListItemMusicCountBinding
+    private lateinit var binding: ListItemMusicBinding
 
     object MusicDiffCallback : DiffUtil.ItemCallback<MusicUiModel>() {
         override fun areItemsTheSame(oldItem: MusicUiModel, newItem: MusicUiModel): Boolean {
@@ -31,7 +33,7 @@ class MusicListAdapter (private val musicListSelectedListener: MusicListSelected
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicViewHolder {
         binding =
-            ListItemMusicCountBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ListItemMusicBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MusicViewHolder(binding)
     }
 }

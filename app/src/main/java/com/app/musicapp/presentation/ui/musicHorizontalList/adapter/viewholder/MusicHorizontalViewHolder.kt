@@ -1,4 +1,4 @@
-package com.app.musicapp.presentation.ui.musicHorizontalList.adapter
+package com.app.musicapp.presentation.ui.musicHorizontalList.adapter.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import coil.load

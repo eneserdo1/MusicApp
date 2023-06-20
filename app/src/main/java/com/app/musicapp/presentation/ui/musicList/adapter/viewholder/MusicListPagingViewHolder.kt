@@ -1,15 +1,16 @@
-package com.app.musicapp.presentation.ui.musicCount.adapter
+package com.app.musicapp.presentation.ui.musicList.adapter.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.app.musicapp.common.listeners.MusicListSelectedListener
 import com.app.musicapp.common.models.MusicUiModel
-import com.app.musicapp.databinding.ListItemMusicCountBinding
+import com.app.musicapp.databinding.ListItemMusicWithImageBinding
 
-class MusicViewHolder(private val binding: ListItemMusicCountBinding) :
-    RecyclerView.ViewHolder(binding.root) {
+class MusicListPagingViewHolder(private val binding : ListItemMusicWithImageBinding) :RecyclerView.ViewHolder(binding.root) {
 
     fun bind(data: MusicUiModel, musicListSelectedListener: MusicListSelectedListener) {
         binding.apply {
+            artistIV.load(data.artworkUrl100)
             artistNameTv.text = data.artistName.toString()
             trackNameTv.text = data.trackName.toString()
 

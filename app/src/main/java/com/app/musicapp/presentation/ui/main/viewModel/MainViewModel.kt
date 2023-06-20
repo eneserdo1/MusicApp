@@ -32,7 +32,7 @@ class MainViewModel @Inject constructor(
         fetchMusicList()
     }
 
-    fun fetchMusicList() {
+    private fun fetchMusicList() {
         val lastUpdatedDate = sharedPreferencesHelper.lastUpdateDate
         val currentDate = getCurrentDate()
 

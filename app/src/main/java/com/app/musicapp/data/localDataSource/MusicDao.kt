@@ -15,9 +15,6 @@ interface MusicDao {
     @Query("DELETE FROM music_table WHERE trackId = :trackId ")
     suspend fun deleteWithTrackId(trackId: Int)
 
-    @Query("SELECT COUNT(*) FROM music_table")
-    suspend fun getMusicCount(): Int
-
     @Query("DELETE FROM music_table")
     suspend fun deleteAllMusic()
 }
