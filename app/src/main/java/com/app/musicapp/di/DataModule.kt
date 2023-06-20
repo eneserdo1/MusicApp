@@ -45,9 +45,10 @@ abstract class DataModule {
         fun provideRepository(
             remoteDataSource: RemoteDataSource,
             musicDao: MusicDao,
-            sharedPreferencesHelper: SharedPreferencesHelper
+            sharedPreferencesHelper: SharedPreferencesHelper,
+            pagingDataSource: PagingDataSource
         ): Repository {
-            return Repository(remoteDataSource, musicDao, sharedPreferencesHelper)
+            return Repository(remoteDataSource, musicDao, sharedPreferencesHelper, pagingDataSource)
         }
 
         @Singleton

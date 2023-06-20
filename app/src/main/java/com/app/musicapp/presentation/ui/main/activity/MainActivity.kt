@@ -75,7 +75,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     private fun showAlert() {
         this.showErrorPopup(
             positiveListener = {
-                viewModel.refreshData()
+                viewModel.refreshMusicData()
             },
             negativeListener = {
                 Alert.errorDialog.dismiss()

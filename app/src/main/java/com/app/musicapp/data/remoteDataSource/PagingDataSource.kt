@@ -4,6 +4,7 @@ import androidx.paging.PagingSource
 import com.app.musicapp.data.models.Result
 import com.app.musicapp.data.network.ApiService
 import retrofit2.HttpException
+import java.io.IOException
 import javax.inject.Inject
 
 class PagingDataSource @Inject constructor(private val apiService: ApiService) :
@@ -23,16 +24,11 @@ class PagingDataSource @Inject constructor(private val apiService: ApiService) :
             }
             val response = apiService.getMusicList(param = serviceParams)
             val responseDataList = response.body()?.results ?: emptyList<Result>()
+
             val nextKey = if (responseDataList.isEmpty()) {
                 null
             } else {
-                if (
-                    params.loadSize == 3 * NETWORK_PAGE_SIZE
-                ) {
-                    position + 1
-                } else {
-                    position + (params.loadSize / NETWORK_PAGE_SIZE)
-                }
+                position + 1
             }
 
 
@@ -43,6 +39,8 @@ class PagingDataSource @Inject constructor(private val apiService: ApiService) :
                 prevKey = prevKey,
                 nextKey = nextKey
             )
+        } catch (e: IOException) {
+            return LoadResult.Error(e)
         } catch (e: Exception) {
             return LoadResult.Error(e)
         } catch (exception: HttpException) {
